@@ -900,9 +900,6 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1)
-
-task.wait(0.1)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
 -- Aqua color sequence (cyan and light blue)
 local aqua = ColorSequence.new{
     ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)), -- cyan
@@ -1025,6 +1022,8 @@ red4.Parent = game.Players.LocalPlayer.Character["Head"]
             child:Emit(20) -- Emit 20 particles
         end
     end
+task.wait(0.1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
        end
     end
 end

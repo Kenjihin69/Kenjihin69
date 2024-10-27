@@ -1,0 +1,44 @@
+local localPlayer = game:GetService("Players").LocalPlayer
+local localCharacter = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+
+local function triggerParticleEffect()
+    for _, part in pairs(localCharacter:GetChildren()) do
+        if part:IsA("BasePart") then
+            local attach = Instance.new("Attachment")
+            local particles = Instance.new("ParticleEmitter")
+
+            attach.Name = "TOKYOISSOKIDI"
+            attach.Parent = part
+
+            particles.Brightness = 5
+            particles.Color = ColorSequence.new({
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)), -- Sky blue color start
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(127, 255, 212)) -- Light blue end
+            })
+            particles.Drag = 3
+            particles.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+            particles.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+            particles.Lifetime = NumberRange.new(0.5)
+            particles.LightEmission = -1
+            particles.LockedToPart = true
+            particles.Rate = 2.5
+            particles.Size = NumberSequence.new({
+                NumberSequenceKeypoint.new(0, 2),
+                NumberSequenceKeypoint.new(1, 2)
+            })
+            particles.Speed = NumberRange.new(0)
+            particles.Texture = "http://www.roblox.com/asset/?id=14904853757"
+            particles.Transparency = NumberSequence.new({
+                NumberSequenceKeypoint.new(0, 1),
+                NumberSequenceKeypoint.new(0.2, 0.49),
+                NumberSequenceKeypoint.new(0.5, 0.51),
+                NumberSequenceKeypoint.new(0.8, 0.49),
+                NumberSequenceKeypoint.new(1, 1)
+            })
+            particles.ZOffset = -1
+            particles.Parent = attach
+        end
+    end
+end
+
+triggerParticleEffect()

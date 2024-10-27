@@ -1401,10 +1401,26 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(0.7)
+local Sound = Instance.new("Sound") 
+        Sound.Parent = character 
+        Sound.SoundId = "rbxassetid://18461821277" 
+        Sound.Playing = true 
+        spawn(function()
+        wait(1) 
+        debounce = true 
+        end) 
+        playAnim:Play() 
+        playAnim:AdjustSpeed(0.3) 
+        wait(0.3) 
+        playAnim:AdjustSpeed(1) 
+        local Players = game:GetService("Players") 
+        local Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait() 
+        local animationPlayed = true -- Flag to track if the animation has already been player
 
     end
 
 end
+
 humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 
 

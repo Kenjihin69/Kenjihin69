@@ -765,13 +765,8 @@ for _, child in ipairs(fx5:GetChildren()) do
 end
 
 task.wait(0.1)
-local final1 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
-final1.Parent = game.Players.LocalPlayer.Character["Head"]
-for _, child in ipairs(final1:GetChildren()) do
-    if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
-        child:Emit(10) -- Emit 20 particles
-    end
-end
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
+
 task.wait(0.1)
 local flash = Game.ReplicatedStorage.Resources.KJEffects.DropkickExtra["firstHit"].Attachment:Clone()
 flash.Parent = game.Players.LocalPlayer.Character["Right Arm"]
@@ -905,6 +900,9 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1)
+
+task.wait(0.1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
 -- Aqua color sequence (cyan and light blue)
 local aqua = ColorSequence.new{
     ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)), -- cyan
@@ -924,7 +922,7 @@ local launch1 = game.ReplicatedStorage.Resources.KJEffects["launchup"].launchyth
             launch1.Parent = game.Players.LocalPlayer.Character["Torso"]
                 for _, child in ipairs(launch1:GetChildren()) do
                     if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
-                        child:Emit(4) -- Emit 20 particles
+                        child:Emit(3) -- Emit 20 particles
                     end
                 end
 task.wait(0.1)

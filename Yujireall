@@ -1420,7 +1420,63 @@ local Sound = Instance.new("Sound")
     end
 
 end
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 
+
+local animationId = 12351854556 ---miss counter 
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://15311685628"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed()
+local final1 = game.ReplicatedStorage.Resources.Sunrise["AtomicSlash"].Part.Attachment:Clone()
+final1.Parent = game.Players.LocalPlayer.Character["Head"]-- Correct reference to 'Head'
+
+for _, child in ipairs(final1:GetChildren()) do
+    if child:IsA("ParticleEmitter") then -- Check if the child is a 
+child.Color = ColorSequence.new(Color3.fromRGB(255, 255, 237)) -- Set color to green
+        child:Emit(8) -- Emits 2 particles
+    end
+end
+    end
+
+end
 humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 
 

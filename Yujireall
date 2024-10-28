@@ -754,14 +754,7 @@ fine3.Parent = game.Players.LocalPlayer.Character["Right Arm"]
     end
 
 task.wait(0.1)
-local hit1 = game.ReplicatedStorage.Resources.KJEffects["lastkick"].Attachment:Clone()
-hit1.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
-    for _, child in ipairs(hit1:GetChildren()) do
-        if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
-            child:Emit(3) -- Emit 20 particles
-        end
-    end
-
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
     end
 
 end
@@ -1087,7 +1080,7 @@ red4.Parent = game.Players.LocalPlayer.Character["Head"]
             child:Emit(20) -- Emit 20 particles
         end
     end
-task.wait(0.8)
+task.wait(1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
 task.wait(0.1)
 -- Aqua color sequence (cyan and light blue)
@@ -1104,7 +1097,7 @@ child.Color = aqua -- Change particle color to aqua
         child:Emit(40)
     end
 end
-wait(43)
+wait(40)
         red4_2:Destroy()
        end
     end

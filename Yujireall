@@ -1089,6 +1089,23 @@ red4.Parent = game.Players.LocalPlayer.Character["Head"]
     end
 task.wait(0.8)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
+task.wait(0.1)
+-- Aqua color sequence (cyan and light blue)
+local aqua = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)), -- cyan
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(127, 255, 212)) -- light aqua
+}
+
+local red4_2 = game.ReplicatedStorage.Resources.StoicBomb["Stage1"].Floor.Attachment:Clone()
+red4_2.Parent = game.Players.LocalPlayer.Character["Left Leg"]
+for _, child in ipairs(red4_2:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+child.Color = aqua -- Change particle color to aqua
+        child:Emit(40)
+    end
+end
+wait(43)
+        red4_2:Destroy()
        end
     end
 end

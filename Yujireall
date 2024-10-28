@@ -1536,14 +1536,14 @@ Anim:AdjustSpeed(0)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(1.3)
+Anim:AdjustSpeed(1.6)
 local final1 = game.ReplicatedStorage.Resources.Sunrise["AtomicSlash"].Part.Attachment:Clone()
 final1.Parent = game.Players.LocalPlayer.Character["Head"]-- Correct reference to 'Head'
 
 for _, child in ipairs(final1:GetChildren()) do
     if child:IsA("ParticleEmitter") then -- Check if the child is a 
 child.Color = ColorSequence.new(Color3.fromRGB(255, 255, 237)) -- Set color to green
-        child:Emit(8) -- Emits 2 particles
+        child:Emit(10) -- Emits 2 particles
     end
 end
     end

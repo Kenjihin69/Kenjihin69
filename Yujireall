@@ -1087,7 +1087,7 @@ red4.Parent = game.Players.LocalPlayer.Character["Head"]
             child:Emit(20) -- Emit 20 particles
         end
     end
-task.wait(0.1)
+task.wait(0.5)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
        end
     end
@@ -1546,6 +1546,61 @@ child.Color = ColorSequence.new(Color3.fromRGB(255, 255, 237)) -- Set color to g
         child:Emit(10) -- Emits 2 particles
     end
 end
+    end
+
+end
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 12272894215 ---miss 1
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://12272894215"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1)
+local red4 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].EyeEmit:Clone()
+red4.Parent = game.Players.LocalPlayer.Character["Head"]
+    for _, child in ipairs(red4:GetChildren()) do
+        if child:IsA("ParticleEmitter") then -- Check if the child is a 
+            child:Emit(20) -- Emit 20 particles
+        end
+    end
     end
 
 end

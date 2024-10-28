@@ -700,7 +700,7 @@ Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1.7)
 
-task.wait(1.7)
+task.wait(1.8)
 
 local AnimAnim2 = Instance.new("Animation")
 
@@ -1087,7 +1087,7 @@ red4.Parent = game.Players.LocalPlayer.Character["Head"]
             child:Emit(20) -- Emit 20 particles
         end
     end
-task.wait(0.5)
+task.wait(0.8)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
        end
     end

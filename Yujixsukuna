@@ -227,7 +227,7 @@ Anim:AdjustSpeed(0)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(5)
+Anim:AdjustSpeed(6)
 
 task.wait(1.7)
 
@@ -302,7 +302,13 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1)
-
+local flash = Game.ReplicatedStorage.Resources.KJEffects.DropkickExtra["firstHit"].Attachment:Clone()
+flash.Parent = game.Players.LocalPlayer.Character["Left Leg"]
+for _, child in ipairs(flash:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(4) -- Emit 1 particle
+    end
+end
     end
 
 end

@@ -1010,8 +1010,6 @@ player.CharacterAdded:Connect(function(newCharacter)
     end
 
 end)
-
-humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 local success, err = pcall(function()
   loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Nanana'))()  
 end)

@@ -1,0 +1,119 @@
+local TextLabelText = "KING OF CURSE" --ult name editor
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Left = false
+local Right = false
+local Top = false
+local Down = false
+
+
+
+
+local Color1 = Color3.fromRGB(85, 255, 255)
+local player = game.Players.LocalPlayer
+local magicHealth = player:WaitForChild("PlayerGui"):WaitForChild("ScreenGui"):WaitForChild("MagicHealth")
+local healthBar = magicHealth:WaitForChild("Health")
+local textLabel = magicHealth:WaitForChild("TextLabel")
+
+healthBar.Bar.ImageColor3 = Color1
+
+textLabel.Text = TextLabelText
+
+if Left then
+    magicHealth.Position = UDim2.new(0, 0, magicHealth.Position.Y.Scale, magicHealth.Position.Y.Offset)
+elseif Right then
+    magicHealth.Position = UDim2.new(1, -magicHealth.Size.X.Offset, magicHealth.Position.Y.Scale, magicHealth.Position.Y.Offset)
+elseif Top then
+    magicHealth.Position = UDim2.new(magicHealth.Position.X.Scale, magicHealth.Position.X.Offset, 0, 0)
+elseif Down then
+    magicHealth.Position = UDim2.new(magicHealth.Position.X.Scale, magicHealth.Position.X.Offset, 1, -magicHealth.Size.Y.Offset)
+end
+
+local player = game.Players.LocalPlayer
+local magicHealthTextLabel = player:WaitForChild("PlayerGui")
+                                 :WaitForChild("ScreenGui")
+                                 :WaitForChild("MagicHealth")
+                                 :WaitForChild("TextLabel")
+
+local offset = UDim2.new(0, 0, -0.78, 0) 
+
+magicHealthTextLabel.Position = magicHealthTextLabel.Position + offset
+local player = game.Players.LocalPlayer
+local screenGui = player:WaitForChild("PlayerGui"):WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+
+magicHealth.BackgroundTransparency = 0.5
+
+magicHealth.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+
+magicHealth.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+magicHealth.BorderSizePixel = 2
+
+local player = game.Players.LocalPlayer
+local screenGui = player:WaitForChild("PlayerGui"):WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+local health = magicHealth:WaitForChild("Health")
+local glow = health:WaitForChild("Glow")
+
+glow.ImageTransparency = 1
+
+local backgroundTransparency = 0
+local backgroundColor = Color3.fromRGB(85, 255, 255) --real ult color lol
+
+local player = game.Players.LocalPlayer
+local screenGui = player:WaitForChild("PlayerGui"):WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+local healthBar = magicHealth:WaitForChild("Health"):WaitForChild("Bar"):WaitForChild("Bar")
+
+healthBar.BackgroundTransparency = backgroundTransparency
+healthBar.BackgroundColor3 = backgroundColor
+
+local player = game.Players.LocalPlayer
+local screenGui = player:WaitForChild("PlayerGui"):WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+local health = magicHealth:WaitForChild("Health")
+local bar = health:WaitForChild("Bar")
+local bar2 = bar:WaitForChild("Bar")
+
+
+bar2.ImageTransparency = 1
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local screenGui = playerGui:WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+local textLabel = magicHealth:WaitForChild("TextLabel")
+
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local screenGui = playerGui:WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+local textLabel = magicHealth:WaitForChild("TextLabel"):WaitForChild("TextLabel")
+textLabel.Font = Enum.Font.RobotoMono
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local screenGui = playerGui:WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+local textLabel = magicHealth:WaitForChild("TextLabel")
+
+textLabel.Font = Enum.Font.RobotoMono
+textLabel.TextSize = 20
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local screenGui = playerGui:WaitForChild("ScreenGui")
+local magicHealth = screenGui:WaitForChild("MagicHealth")
+local textLabel = magicHealth:WaitForChild("TextLabel"):WaitForChild("TextLabel")
+
+textLabel.Font = Enum.Font.RobotoMono
+textLabel.TextSize = 20

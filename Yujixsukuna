@@ -179,7 +179,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69
 task.wait(0.1)
 local Sound = Instance.new("Sound") 
         Sound.Parent = character 
-        Sound.SoundId = "rbxassetid://17325675061" 
+        Sound.SoundId = "rbxassetid://17325303798" 
         Sound.Playing = true 
         spawn(function()
         wait(0.7) 

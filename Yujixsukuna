@@ -176,6 +176,23 @@ for _, child in ipairs(fx5:GetChildren()) do
 end
 task.wait(0.1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
+task.wait(0.1)
+local Sound = Instance.new("Sound") 
+        Sound.Parent = character 
+        Sound.SoundId = "rbxassetid://17325675161" 
+        Sound.Playing = true 
+        spawn(function()
+        wait(0.7) 
+        debounce = true 
+        end) 
+        playAnim:Play() 
+        playAnim:AdjustSpeed(0.3) 
+        wait(0.3) 
+        playAnim:AdjustSpeed(1) 
+        local Players = game:GetService("Players") 
+        local Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait() 
+        local animationPlayed = true -- Flag to track if the animation has already been player
+
     end
 
 end

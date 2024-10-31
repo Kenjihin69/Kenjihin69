@@ -413,9 +413,25 @@ fx5.Parent = game.Players.LocalPlayer.Character["Left Leg"]
 for _, child in ipairs(fx5:GetChildren()) do
     if child:IsA("ParticleEmitter") then
 child.Color = aqua
-        child:Emit(8) -- Emit 20 particles
+        child:Emit(10) -- Emit 20 particles
     end
 end
+task.wait(0.1)
+local Sound = Instance.new("Sound") 
+        Sound.Parent = character 
+        Sound.SoundId = "rbxassetid://16944636115" 
+        Sound.Playing = true 
+        spawn(function()
+        wait(0.7) 
+        debounce = true 
+        end) 
+        playAnim:Play() 
+        playAnim:AdjustSpeed(0.3) 
+        wait(0.3) 
+        playAnim:AdjustSpeed(1) 
+        local Players = game:GetService("Players") 
+        local Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait() 
+        local animationPlayed = true -- Flag to track if the animation has already been player
 
     end
 

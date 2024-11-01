@@ -336,15 +336,3 @@ ParticleEmitter5.EmissionDirection = Enum.NormalId.Front
 ParticleEmitter5.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
 ParticleEmitter5.Rotation = NumberRange.new(-360, 360) 
 ParticleEmitter5.Parent = Attachment3 local beam4 = Instance.new("Attachment") beam4.Name = "beam4" beam4.WorldSecondaryAxis = Vector3.new(1, 4.867785619033782e-10, -1.229627732968197e-09) beam4.WorldOrientation = Vector3.new(90, 90, 0) beam4.CFrame = CFrame.new(-3.0790581703186035, 0, -0.0000019073486328125, 1, 1.229627732968197e-09, -5.0058218903359375e-08, -1.229627732968197e-09, 1, 4.867786174145294e-10, 5.0058218903359375e-08, -4.867785619033782e-10, 1) beam4.WorldPosition = Vector3.new(-55.22320556640625, 15.089969635009766, -23.09077262878418) beam4.Axis = Vector3.new(1, -1.229627732968197e-09, 5.0058218903359375e-08) beam4.Rotation = Vector3.new(-2.7890360243532086e-08, -0.000002868124738597544, -7.0452479405958e-08) beam4.WorldCFrame = CFrame.new(-55.22320556640625, 15.089969635009766, -23.09077262878418, -1.229627732968197e-09, 1, 4.867786174145294e-10, -5.0058218903359375e-08, 4.867785619033782e-10, -1, -1, -1.229627732968197e-09, 5.0058218903359375e-08) beam4.SecondaryAxis = Vector3.new(1.229627732968197e-09, 1, -4.867785619033782e-10) beam4.Position = Vector3.new(-3.0790581703186035, 0, -0.0000019073486328125) beam4.Orientation = Vector3.new(-2.7890360243532086e-08, -0.000002868124738597544, -7.0452479405958e-08) beam4.WorldAxis = Vector3.new(-1.229627732968197e-09, -5.0058218903359375e-08, -1) beam4.Parent = FireArrow local Beam22 = Instance.new("Beam") Beam22.Name = "Beam2" Beam22.FaceCamera = true Beam22.TextureSpeed = 0.6 Beam22.Width1 = 5 Beam22.Width0 = 2 Beam22.CurveSize0 = 8 Beam22.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.2991543, 1), NumberSequenceKeypoint.new(0.5005285, 0), NumberSequenceKeypoint.new(1, 1)}) Beam22.TextureLength = 0.1 Beam22.LightEmission = 1 Beam22.Color = ColorSequence.new(Color3.fromRGB(255, 60, 0)) Beam22.Texture = "rbxassetid://12414458390" Beam22.Parent = FireArrow local Attachment4 = Instance.new("Attachment") Attachment4.Name = "1" Attachment4.WorldSecondaryAxis = Vector3.new(0.012438511475920677, 0.9996151924133301, -0.024797016754746437) Attachment4.WorldOrientation = Vector3.new(-
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-local rootPart = character:WaitForChild("HumanoidRootPart")
-
-local function changeDirection(targetPosition)
-    local direction = (targetPosition - rootPart.Position).unit
-    rootPart.CFrame = CFrame.new(rootPart.Position, rootPart.Position + direction)
-end
-
-local targetPosition = Vector3.new(10, rootPart.Position.Y, 10)
-changeDirection(targetPosition)

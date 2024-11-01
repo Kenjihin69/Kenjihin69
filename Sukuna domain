@@ -1,0 +1,111 @@
+-- Get the player and character
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Wait for the HumanoidRootPart to load
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+-- Create a new part
+local weldPart = Instance.new("Part")
+
+-- Set properties for the weld part
+weldPart.Name = "weld"
+weldPart.Size = Vector3.new(1, 1, 1)  -- You can adjust the size as needed
+weldPart.Position = humanoidRootPart.Position
+weldPart.Anchored = true  -- Make it anchored
+weldPart.Transparency = 1  -- Make it invisible
+weldPart.CanCollide = false  -- Disable collisions
+
+-- Parent the part to the character
+weldPart.Parent = character
+
+-- Position the part on the HumanoidRootPart
+weldPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 17, 0)
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Load the model
+local modelId = 15830444540
+local model = game:GetObjects("rbxassetid://" .. modelId)[1]
+
+-- Set model's parent to the workspace
+model.Parent = workspace
+
+-- Position the model behind the player
+local function positionModel()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+end
+
+-- Make the model anchored and non-collidable
+for _, part in ipairs(model:GetDescendants()) do
+    if part:IsA("BasePart") then
+        part.Anchored = true
+        part.CanCollide = false
+    end
+end
+
+-- Call the function to position the model
+positionModel()
+-- Get the player and character
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Wait for HumanoidRootPart and the MalevolentShrine part to load
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local shrinePart = workspace:FindFirstChild("MalevolentShrine")
+
+-- Check if the MalevolentShrine part exists
+if shrinePart and shrinePart:IsA("BasePart") then
+    -- Find the model inside the shrinePart
+    local model = shrinePart:FindFirstChild("MalevolentShrine")
+    
+    if model and model:IsA("Model") then
+        -- Find the "Main" part inside the model
+        local mainPart = model:FindFirstChild("Main")
+
+        if mainPart then
+            -- Set the PrimaryPart of the model to Main
+            model.PrimaryPart = mainPart
+
+            -- Position the model relative to the HumanoidRootPart
+            model:SetPrimaryPartCFrame(humanoidRootPart.CFrame * CFrame.new(0, 2, 0))  -- Adjust offset as needed
+
+            -- Make sure all parts inside the model are not anchored and non-collidable
+            for _, part in ipairs(model:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    part.Anchored = false
+                    part.CanCollide = false
+                end
+            end
+
+            -- Optionally, set up the existing welds if needed
+            local weld1 = mainPart:FindFirstChild("Weld")
+            local weld2 = mainPart:FindFirstChild("Weld too")
+
+            if weld1 then
+                -- Customize weld1 properties if needed
+                weld1.Part0 = mainPart
+                weld1.Part1 = weldPart
+            end
+
+            if weld2 then
+                -- Customize weld2 properties if needed
+                weld2.Part0 = mainPart
+                weld2.Part1 = weldPart
+            end
+
+            -- Optionally, parent the model to the character to keep it organized
+            model.Parent = character
+ shrinePart:Destroy()
+model.Removed:Connect(function()
+weldPart:Destroy()
+end)
+        else
+            warn("Part named 'Main' not found inside the MalevolentShrine model.")
+        end
+    else
+        warn("Model named 'MalevolentShrine' not found inside the part.")
+    end
+else
+    warn("MalevolentShrine part not found in Workspace or is not a BasePart.")
+end

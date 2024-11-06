@@ -73,13 +73,13 @@ local function activateHollowPurple(character)
         spawn(function() moveOrbSmoothly(redOrb, middlePoint) end)
         spawn(function() moveOrbSmoothly(blueOrb, middlePoint) end)
 
-        wait(2)
+        wait(1.7)
         enableEffects(hollowPurple)
         wait(0.1)
         redOrb:Destroy()
         blueOrb:Destroy()
 
-        wait(2)
+        wait(1.7)
         hollowPurple.Anchored = false
         local launchTweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear)
         local goalPosition = hollowPurple.Position + (humanoidRootPart.CFrame.LookVector * 800)

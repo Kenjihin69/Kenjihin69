@@ -1,0 +1,105 @@
+local player = game.Players.LocalPlayer
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+
+local function activateHollowPurple(character)
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    -- Adjust humanoid properties for smoother movement
+    humanoid.WalkSpeed = 16 -- Adjust as needed
+    humanoid.JumpPower = 50 -- Adjust jump height if needed
+
+    coroutine.wrap(function()
+        local music = Instance.new("Sound", character.Head)
+        music.Name = "Purple"
+        music.SoundId = "rbxassetid://yourSoundId" -- Replace with your actual SoundId
+        music.TimePosition = 165
+        music.Looped = false
+        music.Volume = 4
+        music:Play()
+
+        local objects = game:GetObjects("rbxassetid://123913192872790")[1]
+        local redOrb = objects:FindFirstChild("Red Orb")
+        local blueOrb = objects:FindFirstChild("Blue Orb")
+        local hollowPurple = objects:FindFirstChild("HollowPurple")
+
+        redOrb.Parent = workspace
+        blueOrb.Parent = workspace
+        hollowPurple.Parent = workspace
+
+        redOrb.Anchored = true
+        blueOrb.Anchored = true
+        hollowPurple.Anchored = true
+
+        redOrb.CFrame = humanoidRootPart.CFrame * CFrame.new(-5, 0, 5)  
+        blueOrb.CFrame = humanoidRootPart.CFrame * CFrame.new(5, 0, 5)  
+        hollowPurple.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, -10)
+
+        local function enableEffects(model)
+            for _, obj in pairs(model:GetDescendants()) do
+                if obj:IsA("ParticleEmitter") or obj:IsA("Beam") then
+                    obj.Enabled = true
+                end
+            end
+        end
+
+        local function disableEffects(model)
+            for _, obj in pairs(model:GetDescendants()) do
+                if obj:IsA("ParticleEmitter") or obj:IsA("Beam") then
+                    obj.Enabled = false
+                end
+            end
+        end
+
+        disableEffects(hollowPurple)
+        enableEffects(blueOrb)
+
+        wait(1)
+        enableEffects(redOrb)
+        wait(1.5)
+
+        local middlePoint = (redOrb.Position + blueOrb.Position) / 2
+
+        -- Move orbs smoothly to the middle point
+        local function moveOrbSmoothly(orb, targetPosition)
+            local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Linear)
+            local goal = {Position = targetPosition}
+            local tween = TweenService:Create(orb, tweenInfo, goal)
+            tween:Play()
+            tween.Completed:Wait() -- Wait for the tween to complete
+        end
+
+        spawn(function() moveOrbSmoothly(redOrb, middlePoint) end)
+        spawn(function() moveOrbSmoothly(blueOrb, middlePoint) end)
+
+        wait(2)
+        enableEffects(hollowPurple)
+        wait(0.1)
+        redOrb:Destroy()
+        blueOrb:Destroy()
+
+        wait(2)
+        hollowPurple.Anchored = false
+        local launchTweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear)
+        local goalPosition = hollowPurple.Position + (humanoidRootPart.CFrame.LookVector * 800)
+        TweenService:Create(hollowPurple, launchTweenInfo, {Position = goalPosition}):Play()
+
+        task.wait(6)
+        local twn = TweenService:Create(music, TweenInfo.new(1), {Volume = 0}):Play()
+        task.wait(1)
+        music:Destroy()
+    end)()
+end
+
+local function onCharacterAdded(character)
+    activateHollowPurple(character)
+end
+
+-- Connect to the Player's CharacterAdded event
+player.CharacterAdded:Connect(onCharacterAdded)
+
+-- Ensure the script runs on the current character if already loaded
+if player.Character then
+    onCharacterAdded(player.Character)
+end

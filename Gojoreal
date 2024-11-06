@@ -159,7 +159,7 @@ vfx.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 -- Emit particles for the first effect
 for _, child in ipairs(vfx:GetChildren()) do
     if child:IsA("ParticleEmitter") then
-        child:Emit(2)
+        child:Emit(1)
         child.Enabled = true
     end
 end
@@ -200,7 +200,7 @@ vfx.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
 for _, child in ipairs(vfx:GetChildren()) do
     if child:IsA("ParticleEmitter") then
-        child:Emit(2)
+        child:Emit(1)
         child.Enabled = true
     end
 end
@@ -215,7 +215,7 @@ vfx2.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
 for _, child in ipairs(vfx2:GetChildren()) do
     if child:IsA("ParticleEmitter") then
-        child:Emit(5)
+        child:Emit(1)
         child.Enabled = true
     end
 end
@@ -226,9 +226,9 @@ vfx3.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
 for _, child in ipairs(vfx3:GetChildren()) do
     if child:IsA("ParticleEmitter") then
-        child:Emit(5)
+        child:Emit(1)
         child.Enabled = true
-task.delay(2, function()
+task.delay(1, function()
     vfx2:Destroy()
     vfx3:Destroy()
 end)

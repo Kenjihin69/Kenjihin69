@@ -373,7 +373,7 @@ Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(0.001)
 
-task.wait(1.5)
+task.wait(1.3)
 local AnimAnim2 = Instance.new("Animation")
 
 AnimAnim2.AnimationId = "rbxassetid://15957361339"

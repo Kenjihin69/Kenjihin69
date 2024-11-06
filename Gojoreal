@@ -141,7 +141,7 @@ AnimAnim.AnimationId = "rbxassetid://18903642853"
 local Anim = Humanoid:LoadAnimation(AnimAnim)
 
 
-local startTime = 1.8
+local startTime = 3.6
 
 
 Anim:Play()
@@ -150,7 +150,8 @@ Anim:AdjustSpeed(0)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(1)
+Anim:AdjustSpeed(0.9)
+task.wait(0.6)
 local location = game.ReplicatedStorage.Resources.Sorcerer["WallFX"].FirstSlam.Attachment
 local vfx = location:Clone()
 vfx.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]

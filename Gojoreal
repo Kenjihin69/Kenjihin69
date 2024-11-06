@@ -420,21 +420,21 @@ Anim:AdjustSpeed(0.001)
 task.wait(0.1)
 local Sound = Instance.new("Sound") 
         Sound.Parent = character 
-        Sound.SoundId = "rbxassetid://6650592166" 
+        Sound.SoundId = "rbxassetid://13073929009" 
         Sound.Playing = true 
         spawn(function()
         wait(0.7) 
         debounce = true 
         end) 
         playAnim:Play() 
-        playAnim:AdjustSpeed(0.3) 
+        playAnim:AdjustSpeed(1) 
         wait(0.3) 
         playAnim:AdjustSpeed(1) 
         local Players = game:GetService("Players") 
         local Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait() 
         local animationPlayed = true -- Flag to track if the animation has already been player
 
-task.wait(1.5)
+task.wait(1)
 local AnimAnim2 = Instance.new("Animation")
 
 AnimAnim2.AnimationId = "rbxassetid://15957361339"

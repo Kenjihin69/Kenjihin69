@@ -326,12 +326,12 @@ end
 
 local AnimAnim = Instance.new("Animation")
 
-AnimAnim.AnimationId = "rbxassetid://13294790250"
+AnimAnim.AnimationId = "rbxassetid://18181348446"
 
 local Anim = Humanoid:LoadAnimation(AnimAnim)
 
 
-local startTime = 0.5
+local startTime = 0
 
 
 Anim:Play()
@@ -341,14 +341,30 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1)
-
-
-delay(1.8, function()
-
-    Anim:Stop()
-
-end)
-
+task.wait(0.3)
+local flash = Game.ReplicatedStorage.Resources.KJEffects.DropkickExtra["firstHit"].Attachment:Clone()
+flash.Parent = game.Players.LocalPlayer.Character["Left Leg"]
+for _, child in ipairs(flash:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(4) -- Emit 1 particle
+    end
+end
+task.wait(0.1)
+local Sound = Instance.new("Sound") 
+        Sound.Parent = character 
+        Sound.SoundId = "rbxassetid://18443813318" 
+        Sound.Playing = true 
+        spawn(function()
+        wait(0.7) 
+        debounce = true 
+        end) 
+        playAnim:Play() 
+        playAnim:AdjustSpeed(0.3) 
+        wait(0.3) 
+        playAnim:AdjustSpeed(1) 
+        local Players = game:GetService("Players") 
+        local Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait() 
+        local animationPlayed = true -- Flag to track if the animation has already been player
 
     end
 

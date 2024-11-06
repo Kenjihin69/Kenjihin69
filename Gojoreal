@@ -13,7 +13,7 @@ local baseButton = hotbarFrame:FindFirstChild("1").Base
 local ToolName = baseButton.ToolName
 
 
-ToolName.Text = "Peril's Push"
+ToolName.Text = "???"
 
 
 local player = game.Players.LocalPlayer
@@ -31,7 +31,7 @@ local baseButton = hotbarFrame:FindFirstChild("2").Base
 local ToolName = baseButton.ToolName
 
 
-ToolName.Text = "Consecutive Machine Blows"
+ToolName.Text = "???"
 
 
 local player = game.Players.LocalPlayer
@@ -49,7 +49,7 @@ local baseButton = hotbarFrame:FindFirstChild("3").Base
 local ToolName = baseButton.ToolName
 
 
-ToolName.Text = "Whirlwind Shove"
+ToolName.Text = "???"
 
 
 local player = game.Players.LocalPlayer
@@ -67,7 +67,7 @@ local baseButton = hotbarFrame:FindFirstChild("4").Base
 local ToolName = baseButton.ToolName
 
 
-ToolName.Text = "Head Ups"
+ToolName.Text = "???"
 
 
 local Players = game:GetService("Players")
@@ -91,7 +91,7 @@ local function findGuiAndSetText()
 
             if textLabel then
 
-                textLabel.Text = "MIXED POWERS"
+                textLabel.Text = "?"
 
             end
 

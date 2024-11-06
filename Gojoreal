@@ -372,6 +372,7 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(0.001)
+task.wait(0.3)
 local fx7 = Game.ReplicatedStorage.Resources.CrabBeam["Explo"].Explo.Attachment:Clone()
 fx7.Parent = game.Players.LocalPlayer.Character["Torso"]
 for _, child in ipairs(fx7:GetChildren()) do

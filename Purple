@@ -79,7 +79,7 @@ local function activateHollowPurple(character)
         redOrb:Destroy()
         blueOrb:Destroy()
 
-        wait(1.5)
+        wait(1.3)
         hollowPurple.Anchored = false
         local launchTweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear)
         local goalPosition = hollowPurple.Position + (humanoidRootPart.CFrame.LookVector * 800)

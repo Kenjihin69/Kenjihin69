@@ -547,7 +547,6 @@ local Humanoid = p.Character:WaitForChild("Humanoid")
 for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
 
     animTrack:Stop()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Purple'))()  
 
 end
 
@@ -568,7 +567,8 @@ Anim:AdjustSpeed(0)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(1)
+Anim:AdjustSpeed(0.7)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Purple'))()  
 
 task.wait(1.5)
 
@@ -579,7 +579,7 @@ AnimAnim2.AnimationId = "rbxassetid://13071982935"
 local Anim2 = Humanoid:LoadAnimation(AnimAnim2)
 
 
-local startTime = 1.3
+local startTime = 1.5
 
 
 Anim:Stop()

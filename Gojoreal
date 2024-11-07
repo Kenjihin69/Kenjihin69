@@ -445,7 +445,7 @@ for _, child in ipairs(fx7:GetChildren()) do
         child:Emit(3) -- Emit 1 particle
     end
 end
-task.wait(1)
+task.wait(0.8)
 local AnimAnim2 = Instance.new("Animation")
 
 AnimAnim2.AnimationId = "rbxassetid://18896229321"
@@ -453,7 +453,7 @@ AnimAnim2.AnimationId = "rbxassetid://18896229321"
 local Anim2 = Humanoid:LoadAnimation(AnimAnim2)
 
 
-local startTime = 3.8
+local startTime = 4.2
 
 
 Anim:Stop()

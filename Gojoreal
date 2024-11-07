@@ -636,7 +636,7 @@ end
 
 local AnimAnim = Instance.new("Animation")
 
-AnimAnim.AnimationId = "rbxassetid://18435303746"
+AnimAnim.AnimationId = "rbxassetid://18897551628"
 
 local Anim = Humanoid:LoadAnimation(AnimAnim)
 
@@ -651,7 +651,38 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1)
+local r = game.ReplicatedStorage
+local a = r:WaitForChild("Resources")
+local b = a:WaitForChild("FiveSeasonsFX")
+local m = b:WaitForChild("HandFire"):Clone()
+local plr = game.Players.LocalPlayer
+local char = plr.Character or plr.CharacterAdded:Wait()
+local torso = char:WaitForChild("Left Arm")
 
+m:SetPrimaryPartCFrame(CFrame.new(torso.Position) - Vector3.new(0,0, 0))
+m.Parent = workspace
+
+for _, p in ipairs(m:GetDescendants()) do
+    if p:IsA("BasePart") then
+        for _, a in ipairs(p:GetDescendants()) do
+            if a:IsA("Attachment") then
+                for _, pe in ipairs(a:GetDescendants()) do
+                    if pe:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(255, 0, 0)) -- Set color to stuff
+                        pe:Emit(5)
+                    end
+                end
+            end
+        end
+        
+        for _, pe in ipairs(p:GetDescendants()) do
+            if pe:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(255, 0, 0)) -- Set color to stuff
+                pe:Emit(5)
+            end
+        end
+    end
+end
     end
 
 end

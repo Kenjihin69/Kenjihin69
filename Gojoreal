@@ -31,7 +31,7 @@ local baseButton = hotbarFrame:FindFirstChild("2").Base
 local ToolName = baseButton.ToolName
 
 
-ToolName.Text = "Speedy Beatdown"
+ToolName.Text = "Speedy Barrage"
 
 
 local player = game.Players.LocalPlayer
@@ -91,7 +91,7 @@ local function findGuiAndSetText()
 
             if textLabel then
 
-                textLabel.Text = "?"
+                textLabel.Text = "SIX EYES"
 
             end
 

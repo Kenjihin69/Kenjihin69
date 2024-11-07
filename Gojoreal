@@ -383,12 +383,12 @@ end
 task.wait(1.2)
 local AnimAnim2 = Instance.new("Animation")
 
-AnimAnim2.AnimationId = "rbxassetid://15957361339"
+AnimAnim2.AnimationId = "rbxassetid://18896229321"
 
 local Anim2 = Humanoid:LoadAnimation(AnimAnim2)
 
 
-local startTime = 0
+local startTime = 3.4
 
 
 Anim:Stop()
@@ -399,7 +399,7 @@ Anim2:AdjustSpeed(0)
 
 Anim2.TimePosition = startTime
 
-Anim2:AdjustSpeed(200)
+Anim2:AdjustSpeed(1)
 coroutine.wrap(function()
     -- Ensure the necessary services are available
     local ts = game:GetService("TweenService")

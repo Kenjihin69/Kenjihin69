@@ -551,7 +551,7 @@ local workspace = game.Workspace
  Players = game:GetService("Players")
  local speaker = Players.LocalPlayer
  workspace.CurrentCamera:remove()
-     wait(0.3)
+     wait(0.1)
      workspace.CurrentCamera.CameraSubject = speaker.Character:FindFirstChildWhichIsA('Humanoid')
      workspace.CurrentCamera.CameraType = "Custom"
      speaker.CameraMinZoomDistance = 0.5

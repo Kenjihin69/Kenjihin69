@@ -567,10 +567,10 @@ Anim:AdjustSpeed(0)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(0.2)
+Anim:AdjustSpeed(0.1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Purple'))()  
 
-task.wait(1.5)
+task.wait(1.8)
 
 local AnimAnim2 = Instance.new("Animation")
 
@@ -579,7 +579,7 @@ AnimAnim2.AnimationId = "rbxassetid://13071982935"
 local Anim2 = Humanoid:LoadAnimation(AnimAnim2)
 
 
-local startTime = 2
+local startTime = 2.2
 
 
 Anim:Stop()

@@ -657,9 +657,9 @@ local aqua = ColorSequence.new{
     ColorSequenceKeypoint.new(1, Color3.fromRGB(127, 255, 212)) -- light aqua
 }
 
-local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
-fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
-for _, child in iplairs(fx7:GetChildren()) do
+local fx3 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx3.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx3:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua
         child:Emit(1) -- Emit 1 particle
@@ -667,15 +667,17 @@ for _, child in iplairs(fx7:GetChildren()) do
 end
 task.wait(0.1)
 local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
-fx7.Parent = game.Players.LocalPlayer.Character["Right Arm"]
-for _, child in iplairs(fx7:GetChildren()) do
+fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua
         child:Emit(1) -- Emit 1 particle
     end
 end
-wait(0.7)
-        fx7:Destroy()
+        
+wait(1)
+fx3:Destroy()
+fx7:Destroy()
     end
 
 end

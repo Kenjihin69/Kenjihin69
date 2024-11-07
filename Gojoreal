@@ -424,7 +424,7 @@ end
 
 humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 
-local animationId = 11343318134
+local animationId = 11343318134 ----death
 
 
 local player = game.Players.LocalPlayer
@@ -471,10 +471,95 @@ Anim:AdjustSpeed(0.5)
     end
 
 end
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+ 
+ local animationId = 11365563255
+ 
+ 
+local player = game.Players.LocalPlayer
+ 
+local character = player.Character or player.CharacterAdded:Wait()
+ 
+local humanoid = character:WaitForChild("Humanoid")
+ 
+ 
+local function onAnimationPlayed(animationTrack)
+ 
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+ 
+local p = game.Players.LocalPlayer
+ 
+local Humanoid = p.Character:WaitForChild("Humanoid")
+ 
+ 
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+ 
+    animTrack:Stop()
+ 
+end
+ 
+ 
+local AnimAnim = Instance.new("Animation")
+ 
+AnimAnim.AnimationId = "rbxassetid://18459183268"
+ 
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+ 
+ 
+local startTime = 0
+ 
+Anim:Play()
+ 
+Anim.TimePosition = startTime
 
+Anim:AdjustSpeed(1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Void'))()
+
+task.wait(1)
+
+local AnimAnim2 = Instance.new("Animation")
+
+AnimAnim2.AnimationId = "rbxassetid://18897115785"
+
+local Anim2 = Humanoid:LoadAnimation(AnimAnim2)
+
+
+local startTime = 0
+
+
+Anim:Stop()
+
+Anim2:Play()
+
+Anim2:AdjustSpeed(0)
+
+Anim2.TimePosition = startTime
+
+Anim2:AdjustSpeed(1.2)
+local startTime = tick()  -- Get the current time in seconds Uh yep
+local duration = 3.25  -- Duration in sec Heh
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local floatSpeed = 27 -- Adjust speed fuck you nigga length you want
+local duration = 5 -- Duration in sec :whatthehellbro: 0.1 cuz yes
+
+local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+if humanoidRootPart then
+    local startTime = tick()
+    while tick() - startTime < duration do
+        wait(0.01) -- Controls how the loop runs googoogaga
+        humanoidRootPart.CFrame = humanoidRootPart.CFrame + humanoidRootPart.CFrame.LookVector * floatSpeed * 0.1
+
+    end
+end
+    end
+ 
+end
 humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 
-local animationId = 15955393872
+local animationId = 15955393872 ---wall combo 
 
 
 local player = game.Players.LocalPlayer
@@ -525,7 +610,7 @@ end
 
 humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 
-local animationId = 12983333733
+local animationId = 12983333733 ----hollow purple 
 
 
 local player = game.Players.LocalPlayer
@@ -667,7 +752,7 @@ for _, child in ipairs(fx3:GetChildren()) do
 end
 task.wait(0.1)
 local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
-fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+fx7.Parent = game.Players.LocalPlayer.Character["Right Arm"]
 for _, child in ipairs(fx7:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child.Color = aqua -- Change particle color to aqua

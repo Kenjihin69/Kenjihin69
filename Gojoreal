@@ -515,7 +515,7 @@ Anim.TimePosition = startTime
 Anim:AdjustSpeed(1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Void'))()
 
-task.wait(1)
+task.wait(0.1)
 
 local AnimAnim2 = Instance.new("Animation")
 
@@ -542,7 +542,7 @@ local duration = 3.25  -- Duration in sec Heh
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
-local floatSpeed = 27 -- Adjust speed fuck you nigga length you want
+local floatSpeed = 30 -- Adjust speed fuck you nigga length you want
 local duration = 5 -- Duration in sec :whatthehellbro: 0.1 cuz yes
 
 local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")

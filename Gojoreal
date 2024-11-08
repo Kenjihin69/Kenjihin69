@@ -657,7 +657,7 @@ if d then
 end
 
 -- Wait for 10 seconds
-        wait(1)
+        wait(5)
 
         -- Destroy the effect
         effect:Destroy()

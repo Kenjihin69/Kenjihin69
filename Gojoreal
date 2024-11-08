@@ -563,7 +563,17 @@ local Humanoid = p.Character:WaitForChild("Humanoid")
 for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
 
     animTrack:Stop()
-
+local workspace = game.Workspace
+ Players = game:GetService("Players")
+ local speaker = Players.LocalPlayer
+ workspace.CurrentCamera:remove()
+     wait(0.1)
+     workspace.CurrentCamera.CameraSubject = speaker.Character:FindFirstChildWhichIsA('Humanoid')
+     workspace.CurrentCamera.CameraType = "Custom"
+     speaker.CameraMinZoomDistance = 0.5
+     speaker.CameraMaxZoomDistance = 400
+     speaker.CameraMode = "Classic"
+     speaker.Character.Head.Anchored = false
 end
 
 

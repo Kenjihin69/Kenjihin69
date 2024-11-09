@@ -20,7 +20,7 @@ if effect then
         effect.CFrame = torso.CFrame * CFrame.new(0, 32, -1) -- Change the last value to move the effect closer or further away (negative value moves it closer)
 
         -- Wait for 10 seconds
-        wait(2.5)
+        wait(1)
 
         -- Destroy the effect
         effect:Destroy()

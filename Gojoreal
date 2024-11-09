@@ -1227,7 +1227,7 @@ end
 
 local AnimAnim = Instance.new("Animation")
 
-AnimAnim.AnimationId = "rbxassetid://17859015788"
+AnimAnim.AnimationId = "rbxassetid://17858878027"
 
 local Anim = Humanoid:LoadAnimation(AnimAnim)
 
@@ -1243,8 +1243,14 @@ Anim:AdjustSpeed(2)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(1)
-
+Anim:AdjustSpeed(1.8)
+local launch1 = game.ReplicatedStorage.Resources.KJEffects["launchup"].launchything:Clone()
+            launch1.Parent = game.Players.LocalPlayer.Character["Torso"]
+                for _, child in ipairs(launch1:GetChildren()) do
+                    if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
+                        child:Emit(1) -- Emit 20 particles
+                    end
+                end
 
     end
 

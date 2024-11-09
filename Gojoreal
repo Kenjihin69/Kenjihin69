@@ -798,18 +798,6 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1.6)
-local location2 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.BarrierFX
-local vfx2 = location2:Clone()
-vfx2.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
-
-for _, child in ipairs(vfx2:GetChildren()) do
-    if child:IsA("ParticleEmitter") then
-        child:Emit(1)
-        child.Enabled = true
-    end
-end
-
-
 
 task.wait(1.8)
 
@@ -832,45 +820,7 @@ Anim2:AdjustSpeed(0)
 Anim2.TimePosition = startTime
 
 Anim2:AdjustSpeed(0.5)
-local location3 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.Appear
-local vfx3 = location3:Clone()
-vfx3.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
-for _, child in ipairs(vfx3:GetChildren()) do
-    if child:IsA("ParticleEmitter") then
-        child:Emit(1)
-        child.Enabled = true
-task.delay(2.5, function()
-    vfx2:Destroy()
-    vfx3:Destroy()
-end)
-end
-        
-   wait(1)
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
-local localPlayer = Players.LocalPlayer
-local character = localPlayer.Character
-local head = character:FindFirstChild("Head")
-local torso = character:FindFirstChild("Torso")
-
-if head and torso then
-    local final1 = ReplicatedStorage.Resources.Sorcerer["WallFX"].Final.At:Clone()
-    final1.Parent = head
-    for _, child in ipairs(final1:GetChildren()) do
-        if child:IsA("ParticleEmitter") then
-            child:Emit(1)
-        end
-    end
-
-    local final4 = ReplicatedStorage.Resources.Sorcerer["WallFX"].Final.Attachment:Clone()
-    final4.Parent = HumanoidRootPart
-    for _, child in ipairs(final4:GetChildren()) do
-        if child:IsA("ParticleEmitter") then
-            child:Emit(1)
-        end
-    end
-end
     end
 
 end

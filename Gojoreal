@@ -799,7 +799,6 @@ Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1.6)
 
--- Second effect (Limitless Barrier Core BarrierFX)
 local location2 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.BarrierFX
 local vfx2 = location2:Clone()
 vfx2.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
@@ -823,16 +822,13 @@ local location3 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].
 local vfx3 = location3:Clone()
 vfx3.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
-local location = game.ReplicatedStorage.Resources.Sorcerer["WallFX"].FirstSlam.Attachment
-local vfx = location:Clone()
-vfx.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
-
 for _, child in ipairs(vfx:GetChildren()) do
     if child:IsA("ParticleEmitter") then
-        child:Emit(4)
+        child:Emit(10)
         child.Enabled = true
     end
 end
+
 task.wait(1.8)
 
 local AnimAnim2 = Instance.new("Animation")
@@ -854,10 +850,6 @@ Anim2:AdjustSpeed(0)
 Anim2.TimePosition = startTime
 
 Anim2:AdjustSpeed(0.5)
-
-wait(1)
-
-vfx:Destroy()
 
    wait(1)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")

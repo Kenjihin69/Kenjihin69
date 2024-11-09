@@ -733,12 +733,12 @@ Anim2.TimePosition = startTime
 
 Anim2:AdjustSpeed(1.2)
 local startTime = tick()  -- Get the current time in seconds Uh yep
-local duration = 3.25  -- Duration in sec Heh
+local duration = 4  -- Duration in sec Heh
 
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
-local floatSpeed = 34 -- Adjust speed fuck you nigga length you want
+local floatSpeed = 38 -- Adjust speed fuck you nigga length you want
 local duration = 4 -- Duration in sec :whatthehellbro: 0.1 cuz yes
 
 local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")

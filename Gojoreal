@@ -797,24 +797,7 @@ Anim:AdjustSpeed(0)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(1.7)
-local location = game.ReplicatedStorage.Resources.Sorcerer["WallFX"].FirstSlam.Attachment
-local vfx = location:Clone()
-vfx.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
-
--- Emit particles for the first effect
-for _, child in ipairs(vfx:GetChildren()) do
-    if child:IsA("ParticleEmitter") then
-        child:Emit(1)
-        child.Enabled = true
-    end
-end
-
--- Destroy the first effect after 0.3 seconds
-task.delay(0.3, function()
-    vfx:Destroy()
-end)
-
+Anim:AdjustSpeed(1.6)
 
 -- Second effect (Limitless Barrier Core BarrierFX)
 local location2 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.BarrierFX
@@ -850,7 +833,7 @@ for _, child in ipairs(vfx:GetChildren()) do
         child.Enabled = true
     end
 end
-task.wait(1.5)
+task.wait(1.8)
 
 local AnimAnim2 = Instance.new("Animation")
 

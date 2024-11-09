@@ -850,6 +850,8 @@ Anim2:AdjustSpeed(0)
 Anim2.TimePosition = startTime
 
 Anim2:AdjustSpeed(0.5)
+wait(1)
+        vfx3:Destroy()
 
    wait(1)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")

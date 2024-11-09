@@ -829,7 +829,7 @@ vfx.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
 for _, child in ipairs(vfx:GetChildren()) do
     if child:IsA("ParticleEmitter") then
-        child:Emit(10)
+        child:Emit(4)
         child.Enabled = true
     end
 end

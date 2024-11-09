@@ -798,12 +798,10 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 
 Anim:AdjustSpeed(1.6)
-
 local location2 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.BarrierFX
 local vfx2 = location2:Clone()
 vfx2.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
--- Emit particles for the second effect
 for _, child in ipairs(vfx2:GetChildren()) do
     if child:IsA("ParticleEmitter") then
         child:Emit(1)
@@ -811,23 +809,14 @@ for _, child in ipairs(vfx2:GetChildren()) do
     end
 end
 
--- Destroy the second effect after 1 second
-task.delay(2.75, function()
-    vfx2:Destroy()
-end)
-
-
--- Third effect (Limitless Barrier Core Appear)
 local location3 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.Appear
 local vfx3 = location3:Clone()
 vfx3.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
-for _, child in ipairs(vfx:GetChildren()) do
+for _, child in ipairs(vfx3:GetChildren()) do
     if child:IsA("ParticleEmitter") then
-        child:Emit(10)
+        child:Emit(1)
         child.Enabled = true
-    end
-end
 
 task.wait(1.8)
 
@@ -850,9 +839,13 @@ Anim2:AdjustSpeed(0)
 Anim2.TimePosition = startTime
 
 Anim2:AdjustSpeed(0.5)
-wait(1)
-        vfx3:Destroy()
 
+task.delay(2.5, function()
+    vfx2:Destroy()
+    vfx3:Destroy()
+end)
+end
+        
    wait(1)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")

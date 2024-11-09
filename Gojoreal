@@ -809,14 +809,7 @@ for _, child in ipairs(vfx2:GetChildren()) do
     end
 end
 
-local location3 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.Appear
-local vfx3 = location3:Clone()
-vfx3.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
-for _, child in ipairs(vfx3:GetChildren()) do
-    if child:IsA("ParticleEmitter") then
-        child:Emit(1)
-        child.Enabled = true
 
 task.wait(1.8)
 
@@ -839,7 +832,14 @@ Anim2:AdjustSpeed(0)
 Anim2.TimePosition = startTime
 
 Anim2:AdjustSpeed(0.5)
+local location3 = game.ReplicatedStorage.Resources.Sorcerer["LimitlessBarrier"].Core.Appear
+local vfx3 = location3:Clone()
+vfx3.Parent = game.Players.LocalPlayer.Character["HumanoidRootPart"]
 
+for _, child in ipairs(vfx3:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(1)
+        child.Enabled = true
 task.delay(2.5, function()
     vfx2:Destroy()
     vfx3:Destroy()

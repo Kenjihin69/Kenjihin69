@@ -1,0 +1,33 @@
+local function playSequentialAnimations(moveId, animationId1, speed, stopAfter)
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    humanoid.AnimationPlayed:Connect(function(animationTrack)
+        -- Ensure this triggers only for the specified moveId
+        if animationTrack.Animation.AnimationId == "rbxassetid://" .. moveId then
+            -- Stop only the animation corresponding to the moveId if it's playing
+            for _, animTrack in pairs(humanoid:GetPlayingAnimationTracks()) do
+                if animTrack.Animation.AnimationId == "rbxassetid://" .. moveId then
+                    animTrack:Stop()
+                end
+            end
+
+            -- Load and play the new animation
+            local anim1 = Instance.new("Animation")
+            anim1.AnimationId = "rbxassetid://" .. animationId1
+            local loadedAnim1 = humanoid:LoadAnimation(anim1)
+            loadedAnim1:Play()
+            loadedAnim1:AdjustSpeed(speed)
+
+            -- Optionally stop the animation after a certain time
+            if stopAfter then
+                delay(stopAfter, function()
+                    loadedAnim1:Stop()
+                end)
+            end
+        end
+    end)
+end
+
+playSequentialAnimations(10470389827, 15020965094, 5.1)  -- block

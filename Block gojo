@@ -30,4 +30,4 @@ local function playSequentialAnimations(moveId, animationId1, speed, stopAfter)
     end)
 end
 
-playSequentialAnimations(10470389827, 15020965094, 5.4)  -- block
+playSequentialAnimations(10470389827, 15020965094, 5.6)  -- block

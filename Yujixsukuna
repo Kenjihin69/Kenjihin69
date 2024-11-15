@@ -726,8 +726,7 @@ Anim:AdjustSpeed(0)
 wait(0)
 
 Anim:AdjustSpeed(1)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Sukuna%20domain'))()
-
+loadstring(game:HttpGet('https://pastebin.com/raw/KF40jaXS'))()
 task.wait(0.1)
 loadstring(game:HttpGet('https://pastebin.com/raw/JKBEpaQW'))()
 

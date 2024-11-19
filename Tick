@@ -4,7 +4,7 @@ local duration = 4  -- Duration in sec Heh
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
-local floatSpeed = 20
+local floatSpeed = 17
 local duration = 4.3 -- Duration in sec :whatthehellbro: 0.1 cuz yes
 
 local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")

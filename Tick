@@ -1,5 +1,5 @@
 local startTime = tick()  -- Get the current time in seconds Uh yep
-local duration = 3.25  -- Duration in sec Heh
+local duration = 4  -- Duration in sec Heh
 
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()

@@ -156,7 +156,7 @@ local function findGuiAndSetText()
 
             if textLabel then
 
-                textLabel.Text = "THIS IS TRUE KUNG-FU"
+                textLabel.Text = "MHB SUCK"
 
             end
 

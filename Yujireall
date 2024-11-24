@@ -216,7 +216,7 @@ Anim:AdjustSpeed(0)
 
 Anim.TimePosition = startTime
 
-Anim:AdjustSpeed(1)
+Anim:AdjustSpeed(1.4)
 
 task.wait(1.5)
 

@@ -1050,10 +1050,12 @@ if humanoidRootPart then
     while tick() - startTime < duration do
         wait(0.01) -- Controls how the loop runs googoogaga
         humanoidRootPart.CFrame = humanoidRootPart.CFrame + humanoidRootPart.CFrame.LookVector * floatSpeed * 0.1
-task.wait(0.1)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Manga%20panelba'))()
+
     end
 end
+task.wait(0.1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Manga%20panelba'))()
+
 task.wait(0.4)          
           local AnimAnim2 = Instance.new("Animation")
  

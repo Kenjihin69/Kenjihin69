@@ -1053,8 +1053,6 @@ if humanoidRootPart then
 
     end
 end
-task.wait(0.1)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Manga%20panelba'))()
 
 task.wait(0.4)          
           local AnimAnim2 = Instance.new("Animation")

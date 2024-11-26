@@ -1,0 +1,47 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local deathPosition = nil
+local animationId = "rbxassetid://15957376722"
+
+local function stopAllAnimations(humanoid)
+    local animationTracks = humanoid:GetPlayingAnimationTracks()
+    for _, track in ipairs(animationTracks) do
+        track:Stop()
+ 
+    end
+end
+
+local function onCharacterAdded(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    if deathPosition then
+        character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(deathPosition)
+        stopAllAnimations(humanoid)
+        task.wait()
+        local animation = Instance.new("Animation")
+        animation.AnimationId = animationId
+        local animationTrack = humanoid:LoadAnimation(animation)
+        animationTrack:Play()
+      
+        wait(0.1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Panel'))()
+        
+
+        task.wait(3)
+        animationTrack:Stop()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Shinjuku%20yuji%20v1.1'))()
+        deathPosition = nil  
+    end
+
+    humanoid.HealthChanged:Connect(function(health)
+        if health <= 0 then
+
+            deathPosition = character:WaitForChild("HumanoidRootPart").Position
+        end
+    end)
+end
+
+player.CharacterAdded:Connect(onCharacterAdded)
+
+if player.Character then
+    onCharacterAdded(player.Character)

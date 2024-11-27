@@ -29,7 +29,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69
 
         task.wait(3)
         animationTrack:Stop()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Shinjuku%20yuji%20v1.1'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Jujutsu%20shenanigans'))()
         deathPosition = nil  
     end
 

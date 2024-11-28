@@ -9,3 +9,15 @@ for _, child in ipairs(test:GetChildren()) do
         child.Enabled = true
     end
 end
+task.wait(0.1)
+-- Destroy function
+local function destroyTest()
+    for _, child in ipairs(test:GetChildren()) do
+        if child:IsA("ParticleEmitter") then
+            child.Enabled = false -- Disable the particle emitter
+        end
+    end
+
+    task.wait(2) -- Wait a couple of seconds for particles to finish
+    test:Destroy() -- Destroy the cloned object
+end

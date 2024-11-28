@@ -1,3 +1,4 @@
+
 local Test = game:GetService("ReplicatedStorage").Resources.BloodSplatter.Attachment
 local test = Test:Clone()
 test.Parent = game.Players.LocalPlayer.Character["Left Arm"]
@@ -9,7 +10,6 @@ for _, child in ipairs(test:GetChildren()) do
         child.Enabled = true
     end
 end
-task.wait(0.1)
 -- Destroy function
 local function destroyTest()
     for _, child in ipairs(test:GetChildren()) do
@@ -18,6 +18,9 @@ local function destroyTest()
         end
     end
 
-    task.wait(2) -- Wait a couple of seconds for particles to finish
+    task.wait(0) -- Wait a couple of seconds for particles to dissipate
     test:Destroy() -- Destroy the cloned object
 end
+
+-- Call the destroy function after a delay
+task.delay(0.9, destroyTest) -- Adjust the delay as needed

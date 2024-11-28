@@ -1,0 +1,11 @@
+local Test = game:GetService("ReplicatedStorage").Resources.BloodSplatter.Attachment
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(1)
+        child.Enabled = true
+    end
+end

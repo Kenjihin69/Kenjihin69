@@ -1,0 +1,10 @@
+local StarterGui = game:GetService("StarterGui")
+
+StarterGui:SetCore("SendNotification", {
+    Title = "Wow Shinjuku yuji",
+    Text = "i didn't know that you set true this secret",
+    Icon = "rbxassetid://73404255344505",
+    Duration = 10,
+    Callback = Instance.new("BindableFunction"),
+    Button1 = "sigma"
+})

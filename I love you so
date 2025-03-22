@@ -1,5 +1,5 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "suggestion by gojo_catoruone",
+    Title = "suggestion by bob_yellowthing",
     Text = "if you use this emote don't move pls",
     Icon = "rbxassetid://77291366948531", -- Optional, you can provide an image asset ID or leave empty
     Duration = 3 -- Duration in seconds

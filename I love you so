@@ -1,0 +1,59 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "suggestion by gojo_catoruone",
+    Text = "if you use this emote don't move pls",
+    Icon = "rbxassetid://1", -- Optional, you can provide an image asset ID or leave empty
+    Duration = 3 -- Duration in seconds
+})
+task.wait(0)
+local animationId = "17863040703"
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://" .. animationId
+local animationTrack = humanoid:LoadAnimation(animation)
+
+local startTime = 0
+
+animationTrack:Play()
+
+animationTrack.TimePosition = startTime
+
+animationTrack:AdjustSpeed(1)
+--hawl
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local rightArm = character:FindFirstChild("Right Arm") or character:WaitForChild("RightHand")
+
+local swordModel = game:GetObjects("rbxassetid://108010533276312")[1]
+local handle = swordModel:FindFirstChild("Handle") or swordModel:FindFirstChildWhichIsA("BasePart")
+if not handle then return end
+
+for _, part in ipairs(swordModel:GetDescendants()) do
+    if part:IsA("BasePart") then
+        part.CanCollide = false
+
+        local highlight = Instance.new("Highlight")
+        highlight.Adornee = part
+        highlight.Parent = part
+        highlight.FillTransparency = 1
+        highlight.OutlineColor = Color3.new(0, 0, 0)
+        highlight.OutlineTransparency = 1
+    end
+end
+
+swordModel.Parent = character
+
+local weld = Instance.new("Weld")
+weld.Part0 = rightArm
+weld.Part1 = handle
+weld.C0 = CFrame.new(-0.3, -1, -1) * CFrame.Angles(-1, math.rad(2), math.rad(0))
+weld.Parent = rightArm
+
+handle.CFrame = rightArm.CFrame * weld.C0
+
+wait(8) -- what every u want
+swordModel:Destroy()

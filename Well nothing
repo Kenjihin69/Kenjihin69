@@ -95,6 +95,8 @@ local Players = game:GetService("Players")
         for _, particle in ipairs(particles) do
             particle.Enabled = false
         end 
+wait(1)
+        effectPart:Destroy()   
 task.wait(0.4)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Yujihit'))()
 task.wait(0)
@@ -107,6 +109,4 @@ s.SoundId = "rbxassetid://" .. Sound
 s:Play()
 s.Volume = Volume
 s.PlaybackSpeed = Speed      
-    task.wait(0.2)
-        effectPart:Destroy()
     

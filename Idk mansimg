@@ -1,0 +1,250 @@
+function onAnimation(id, func)
+    local id = tostring(id):gsub("rbxassetid://", "")
+    
+    local char = game:GetService("Players").LocalPlayer.Character
+    local humanoid = char and char:WaitForChild("Humanoid", 1)
+    if char and humanoid then
+        humanoid.AnimationPlayed:Connect(function(v)
+            local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+            if id == vID then
+                func(v)
+            end
+        end)
+    end
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+        local humanoid = char and char:WaitForChild("Humanoid", 1)
+        if char and humanoid then
+            humanoid.AnimationPlayed:Connect(function(v)
+                local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+                if id == vID then
+                    func(v)
+                end
+            end)
+        end
+    end)
+end
+
+
+
+onAnimation("100592913030351", function(animation)
+    local function GetGitSound(GithubSnd,SoundName) --idk what is this for anyway
+    local url=GithubSnd
+    if not isfile(SoundName..".mp3") then
+        writefile(SoundName..".mp3", game:HttpGet(url))
+    end
+    local sound=Instance.new("Sound")
+    sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+    return sound
+end
+
+local Clock = GetGitSound("https://github.com/kenkenplaygt/kenkenplaygt/blob/main/Screen_Recording_20260705_172613~2.mp3?raw=true","massr")
+
+Clock.Parent = workspace
+Clock.Volume = 18
+
+Clock.TimePosition = 1
+
+Clock:Play()
+    warn("animation id:", animation.Animation.AnimationId)
+end)
+
+function onAnimation(id, func)
+    local id = tostring(id):gsub("rbxassetid://", "")
+    
+    local char = game:GetService("Players").LocalPlayer.Character
+    local humanoid = char and char:WaitForChild("Humanoid", 1)
+    if char and humanoid then
+        humanoid.AnimationPlayed:Connect(function(v)
+            local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+            if id == vID then
+                func(v)
+            end
+        end)
+    end
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+        local humanoid = char and char:WaitForChild("Humanoid", 1)
+        if char and humanoid then
+            humanoid.AnimationPlayed:Connect(function(v)
+                local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+                if id == vID then
+                    func(v)
+                end
+            end)
+        end
+    end)
+end
+
+
+
+onAnimation("81935774508746", function(animation)
+    local function GetGitSound(GithubSnd,SoundName) --idk what is this for anyway
+    local url=GithubSnd
+    if not isfile(SoundName..".mp3") then
+        writefile(SoundName..".mp3", game:HttpGet(url))
+    end
+    local sound=Instance.new("Sound")
+    sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+    return sound
+end
+
+local Clock = GetGitSound("https://github.com/kenkenplaygt/kenkenplaygt/blob/main/Screen_Recording_20260705_172707~2.mp3?raw=true","enr")
+
+Clock.Parent = workspace
+Clock.Volume = 11
+
+Clock.TimePosition = 0
+
+Clock:Play()
+    warn("animation id:", animation.Animation.AnimationId)
+end)
+
+function onAnimation(id, func)
+    local id = tostring(id):gsub("rbxassetid://", "")
+    
+    local char = game:GetService("Players").LocalPlayer.Character
+    local humanoid = char and char:WaitForChild("Humanoid", 1)
+    if char and humanoid then
+        humanoid.AnimationPlayed:Connect(function(v)
+            local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+            if id == vID then
+                func(v)
+            end
+        end)
+    end
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+        local humanoid = char and char:WaitForChild("Humanoid", 1)
+        if char and humanoid then
+            humanoid.AnimationPlayed:Connect(function(v)
+                local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+                if id == vID then
+                    func(v)
+                end
+            end)
+        end
+    end)
+end
+
+
+
+onAnimation("95313892538462", function(animation)
+    local function GetGitSound(GithubSnd,SoundName) --idk what is this for anyway
+    local url=GithubSnd
+    if not isfile(SoundName..".mp3") then
+        writefile(SoundName..".mp3", game:HttpGet(url))
+    end
+    local sound=Instance.new("Sound")
+    sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+    return sound
+end
+
+local Clock = GetGitSound("https://github.com/kenkenplaygt/kenkenplaygt/blob/main/Screen_Recording_20260705_172816~2.mp3?raw=true","eyer")
+
+Clock.Parent = workspace
+Clock.Volume = 14
+
+Clock.TimePosition = 0
+
+Clock:Play()
+    warn("animation id:", animation.Animation.AnimationId)
+end)
+
+function onAnimation(id, func)
+    local id = tostring(id):gsub("rbxassetid://", "")
+    
+    local char = game:GetService("Players").LocalPlayer.Character
+    local humanoid = char and char:WaitForChild("Humanoid", 1)
+    if char and humanoid then
+        humanoid.AnimationPlayed:Connect(function(v)
+            local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+            if id == vID then
+                func(v)
+            end
+        end)
+    end
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+        local humanoid = char and char:WaitForChild("Humanoid", 1)
+        if char and humanoid then
+            humanoid.AnimationPlayed:Connect(function(v)
+                local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+                if id == vID then
+                    func(v)
+                end
+            end)
+        end
+    end)
+end
+
+
+
+onAnimation("116936250432479", function(animation)
+    local function GetGitSound(GithubSnd,SoundName) --idk what is this for anyway
+    local url=GithubSnd
+    if not isfile(SoundName..".mp3") then
+        writefile(SoundName..".mp3", game:HttpGet(url))
+    end
+    local sound=Instance.new("Sound")
+    sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+    return sound
+end
+
+local Clock = GetGitSound("https://github.com/kenkenplaygt/kenkenplaygt/blob/main/Screen_Recording_20260705_172740~2.mp3?raw=true","ar")
+
+Clock.Parent = workspace
+Clock.Volume = 11
+
+Clock.TimePosition = 0
+
+Clock:Play()
+    warn("animation id:", animation.Animation.AnimationId)
+end)
+ 
+function onAnimation(id, func)
+    local id = tostring(id):gsub("rbxassetid://", "")
+    
+    local char = game:GetService("Players").LocalPlayer.Character
+    local humanoid = char and char:WaitForChild("Humanoid", 1)
+    if char and humanoid then
+        humanoid.AnimationPlayed:Connect(function(v)
+            local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+            if id == vID then
+                func(v)
+            end
+        end)
+    end
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+        local humanoid = char and char:WaitForChild("Humanoid", 1)
+        if char and humanoid then
+            humanoid.AnimationPlayed:Connect(function(v)
+                local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+                if id == vID then
+                    func(v)
+                end
+            end)
+        end
+    end)
+end
+
+
+
+onAnimation("77751127741939", function(animation)
+    local function GetGitSound(GithubSnd,SoundName) --idk what is this for anyway
+    local url=GithubSnd
+    if not isfile(SoundName..".mp3") then
+        writefile(SoundName..".mp3", game:HttpGet(url))
+    end
+    local sound=Instance.new("Sound")
+    sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+    return sound
+end
+
+local Clock = GetGitSound("https://github.com/kenkenplaygt/kenkenplaygt/blob/main/Screen_Recording_20260705_2027022.mp3?raw=true","kilanim")
+
+Clock.Parent = workspace
+Clock.Volume = 12
+
+Clock.TimePosition = 0
+
+Clock:Play()
+    warn("animation id:", animation.Animation.AnimationId)
+end)
+

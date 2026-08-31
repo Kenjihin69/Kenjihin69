@@ -1,0 +1,93 @@
+function onAnimation(id, func)
+    local id = tostring(id):gsub("rbxassetid://", "")
+    
+    local char = game:GetService("Players").LocalPlayer.Character
+    local humanoid = char and char:WaitForChild("Humanoid", 1)
+    if char and humanoid then
+        humanoid.AnimationPlayed:Connect(function(v)
+            local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+            if id == vID then
+                func(v)
+            end
+        end)
+    end
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+        local humanoid = char and char:WaitForChild("Humanoid", 1)
+        if char and humanoid then
+            humanoid.AnimationPlayed:Connect(function(v)
+                local vID = v.Animation.AnimationId:gsub("rbxassetid://", "")
+                if id == vID then
+                    func(v)
+                end
+            end)
+        end
+    end)
+end
+
+
+
+onAnimation("123708868452429", function(animation)
+task.wait(0.5)
+    local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local camera = workspace.CurrentCamera  -- Reference to the camera
+
+
+local dashSpeed = 140
+local dashDuration = 0.1
+local isDashing = false
+
+
+local dashAnim = Instance.new("Animation")
+dashAnim.AnimationId = "rbxassetid://0"
+local animTrack = humanoid:LoadAnimation(dashAnim)
+ 
+
+local function moveForward()
+    if isDashing then return end
+    isDashing = true
+
+    wait(0)
+
+
+
+    local bodyVelocity = Instance.new("BodyVelocity")
+    bodyVelocity.MaxForce = Vector3.new(100000, 100000, 100000)  -- Max force to apply the movement
+    bodyVelocity.Parent = humanoidRootPart
+
+    local dashEndTime = tick() + dashDuration  -- Time when dash should end
+
+    while tick() < dashEndTime do
+       
+        local cameraDirection = camera.CFrame.LookVector
+        local dashDirection = Vector3.new(cameraDirection.X, 0, cameraDirection.Z).unit
+
+        bodyVelocity.Velocity = dashDirection * dashSpeed
+
+        wait(0)  
+    end
+
+ 
+    animTrack:Stop()
+
+  
+    bodyVelocity:Destroy()
+    isDashing = false
+end
+
+
+moveForward()  
+    warn("animation id:", animation.Animation.AnimationId)
+end)
+local StarterGui = game:GetService("StarterGui")
+
+StarterGui:SetCore("SendNotification", {
+    Title = "awesome Ninja but better(use the skin)",
+    Text = "it's just a dash slash lol don't use it on public",
+    Icon = "rbxassetid://",
+    Duration = 10,
+    Callback = Instance.new("BindableFunction"),
+    Button1 = " one execute only ok?"
+})
